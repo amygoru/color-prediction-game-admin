@@ -1,7 +1,7 @@
 {
-  "name": "@minimal/material-kit-react",
-  "author": "minimals.cc",
-  "licence": "MIT",
+  "name": "admin-color-prediction",
+  "author": "dev",
+  "licence": "Pro-dev",
   "version": "1.7.0",
   "private": false,
   "scripts": {
@@ -38,6 +38,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@faker-js/faker": "^7.6.0",

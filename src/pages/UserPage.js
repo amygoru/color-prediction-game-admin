@@ -34,11 +34,17 @@ import USERLIST from '../_mock/user';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
+  { id: 'id', label: 'id', alignRight: false },
+  { id: 'Username', label: 'Username', alignRight: false },
+  { id: 'Usercode', label: 'Usercode', alignRight: false },
+  { id: 'Login IP', label: 'Login IP', alignRight: false },
+  { id: 'regitred IP', label: 'regitred IP', alignRight: false },
+  { id: 'Password', label: 'Password', alignRight: false },
+  { id: 'Balance', label: 'Balance', alignRight: false },
+  { id: 'Name', label: 'Name', alignRight: false },
+  { id: 'Account No', label: 'Account No', alignRight: false },
+  { id: 'IFSC', label: 'IFSC', alignRight: false },
+  { id: 'upi id', label: 'upi id', alignRight: false },
   { id: '' },
 ];
 
@@ -155,9 +161,9 @@ export default function UserPage() {
           <Typography variant="h4" gutterBottom>
             User
           </Typography>
-          <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+          {/* <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
             New User
-          </Button>
+          </Button> */}
         </Stack>
 
         <Card>
