@@ -1,45 +1,42 @@
-import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
-// @mui
+import * as React from 'react';
 import { Container, Stack, Typography } from '@mui/material';
-// components
-import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';
-// mock
-import PRODUCTS from '../_mock/products';
-
-// ----------------------------------------------------------------------
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 
 export default function ProductsPage() {
-  const [openFilter, setOpenFilter] = useState(false);
 
-  const handleOpenFilter = () => {
-    setOpenFilter(true);
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
-
-  const handleCloseFilter = () => {
-    setOpenFilter(false);
-  };
-
   return (
     <>
       <Container>
         <Typography variant="h4" sx={{ mb: 5 }}>
        New Prediction
         </Typography>
-
-        <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
-          <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-            <ProductFilterSidebar
-              openFilter={openFilter}
-              onOpenFilter={handleOpenFilter}
-              onCloseFilter={handleCloseFilter}
-            />
-            <ProductSort />
-          </Stack>
-        </Stack>
-
-        <ProductList products={PRODUCTS} />
-        <ProductCartWidget />
+        <Box sx={{ width: '100%', typography: 'body1' }}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Parity" value="1" />
+            <Tab label="sapre" value="2" />
+            <Tab label="Emred" value="3" />
+            <Tab label="Becone" value="4" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">Parity</TabPanel>
+        <TabPanel value="2">sapre</TabPanel>
+        <TabPanel value="3">Emred</TabPanel>
+        <TabPanel value="4">Becone</TabPanel>
+      </TabContext>
+    </Box>
+  
       </Container>
     </>
   );
